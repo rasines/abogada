@@ -1,0 +1,326 @@
+/* styles.css */
+.service-tabs {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    justify-content: center;
+    /* Centrar pestañas horizontalmente (opcional) */
+}
+
+.service-tabs li {
+    margin-right: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #f9f9f9;
+}
+
+.service-tabs li:hover {
+    background-color: #eee;
+}
+
+.service-tabs li.active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    /* Para que se vea "conectado" al contenido */
+}
+
+/* Contenedor que envuelve todo el contenido de pestañas */
+.service-tab-content {
+    border: 1px solid #ccc;
+    padding: 35px;
+    border-top: none;
+    background-color: #fff;
+}
+
+.service-tab-content h4 {
+    font-size: large;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.service-tab-content ul {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: medium;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.service-tab-content li{
+    margin-bottom: 15px;
+}
+
+/* Cada bloque de contenido de pestaña */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#starter {
+    position: relative;
+    overflow: hidden;
+}
+
+#starter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('chris-brignola-X2CxUXFqKcM-unsplash.jpg');
+    /* Reemplaza con la URL de tu imagen */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+    /* Ajusta la opacidad según necesites */
+    z-index: -1;
+}
+
+#servicios {
+    position: relative;
+    overflow: hidden;
+}
+
+#servicios::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('tingey-injury-law-firm-DZpc4UY8ZtY-unsplash.jpg');
+    /* Reemplaza con la URL de tu imagen */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+    /* Ajusta la opacidad según necesites */
+    z-index: -1;
+}
+
+
+.attributions {
+    font-size: xx-small;
+    text-decoration: none;
+}
+
+.attributions a,
+.attributions.a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #16a085;
+    --light-color: #ecf0f1;
+    --text-color: #333;
+    --font-family: 'Merriweather', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header .logo {
+    font-size: 1.8em;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-list li a:hover {
+    color: var(--accent-color);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    /* background-color: #fff; */
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.whatsapp-btn i {
+    margin-right: 8px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: calc(10vw + 5vh);
+    border-radius: 8px;
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: var(--primary-color);
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.services .service-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.contact .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.qr-code img {
+    max-width: 150px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .contact .contact-info {
+        flex-direction: column;
+    }
+}
