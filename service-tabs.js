@@ -1,29 +1,26 @@
 $(document).ready(function() {
-    // Mostrar la primera pestaña por defecto con animación
+    // Mostrar la primera pestaña por defecto
     $('.service-tabs li:first').addClass('active');
-    $('.tab-content:first').addClass('active').css({ visibility: "visible", height: "auto" });
+    $('.tab-content:first').addClass('active').css({ height: "auto", opacity: 1 });
 
-    $('.service-tabs li').click(function() {
+    $('.service-tabs li').on('click touchstart', function(e) {
+        e.preventDefault(); // Evitar eventos fantasmas en móviles
+
         if ($(this).hasClass('active')) return;
 
-        // Remover active y ocultar contenido con animación
+        // Quitar la clase active de todas las pestañas y ocultar el contenido
         $('.service-tabs li').removeClass('active');
-        $('.tab-content.active')
-            .removeClass('active')
-            .css({ height: $('.tab-content.active').outerHeight() }) // Fija la altura antes de ocultar
-            .animate({ height: 0 }, 300, function() {
-                $(this).css({ visibility: "hidden" });
-            });
+        $('.tab-content.active').removeClass('active').slideUp(300).css({ opacity: 0 });
 
-        // Activar la nueva pestaña
+        // Activar la pestaña seleccionada
         $(this).addClass('active');
         var tabId = $(this).data('tab');
         var newTab = $('#tab-' + tabId);
 
         // Mostrar nuevo contenido con animación
         newTab
-            .css({ visibility: "visible", height: 0 }) // Inicializa altura en 0
             .addClass('active')
-            .animate({ height: newTab.prop('scrollHeight') }, 300); // Expande a su altura completa
+            .css({ opacity: 1 })
+            .slideDown(300);
     });
 });

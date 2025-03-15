@@ -60,18 +60,21 @@
 }
 
 /* Cada bloque de contenido de pestaña */
-/* Asegurar que los tab-content estén ocultos pero sin usar display: none */
+
+/* Pestañas ocultas sin usar display: none */
 .tab-content {
-    visibility: hidden;
+    display: block;
     height: 0;
     overflow: hidden;
-    transition: height 0.3s ease-out, visibility 0.3s ease-out;
+    opacity: 0;
+    transition: height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .tab-content.active {
-    visibility: visible;
     height: auto;
+    opacity: 1;
 }
+
 
 #starter {
     position: relative;
