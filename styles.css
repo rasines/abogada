@@ -60,12 +60,17 @@
 }
 
 /* Cada bloque de contenido de pestaña */
+/* Asegurar que los tab-content estén ocultos pero sin usar display: none */
 .tab-content {
-    display: none;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out, visibility 0.3s ease-out;
 }
 
 .tab-content.active {
-    display: block;
+    visibility: visible;
+    height: auto;
 }
 
 #starter {
@@ -322,5 +327,19 @@ section h3 {
 
     .contact .contact-info {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-tabs li {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+        border-radius: 5px;
     }
 }
