@@ -1,4 +1,20 @@
 /* styles.css */
+.flex-container-about{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.foto-laura{
+    max-width: calc(5vw + 5vh);
+    display: block;
+    border-radius: 20px;
+    width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    margin-right: 20px;
+    filter:sepia(0.3);
+}
+
 .service-tabs {
     display: flex;
     list-style-type: none;
@@ -257,7 +273,7 @@ section h3 {
 .about p {
     max-width: 800px;
     margin: auto;
-    text-align: center;
+    text-align: left;
     font-size: 1.1em;
 }
 
